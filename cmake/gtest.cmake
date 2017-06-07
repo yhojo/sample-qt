@@ -13,6 +13,7 @@ ExternalProject_Add(
 
 ExternalProject_Get_Property(GoogleTest source_dir)
 include_directories(${source_dir}/googletest/include)
+include_directories(${source_dir}/googlemock/include)
 
 ExternalProject_Get_Property(GoogleTest binary_dir)
 add_library(gtest STATIC IMPORTED)
@@ -24,4 +25,14 @@ add_library(gtest_main STATIC IMPORTED)
 set_property(
         TARGET gtest_main
         PROPERTY IMPORTED_LOCATION ${binary_dir}/googlemock/gtest/libgtest_main.a
+)
+add_library(gmock STATIC IMPORTED)
+set_property(
+        TARGET gmock
+        PROPERTY IMPORTED_LOCATION ${binary_dir}/googlemock/libgmock.a
+)
+add_library(gmock_main STATIC IMPORTED)
+set_property(
+        TARGET gmock_main
+        PROPERTY IMPORTED_LOCATION ${binary_dir}/googlemock/libgmock_main.a
 )
