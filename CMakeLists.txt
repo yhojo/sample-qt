@@ -6,10 +6,10 @@ set (CMAKE_CXX_STANDARD 14)
 
 include(cmake/qt5.cmake)
 
-file(GLOB FRAMEWORK_CODES fwk/*.cpp)
+file(GLOB FRAMEWORK_CODES fwk/*.cpp fwk/*.h)
 include_directories(fwk)
 
-file(GLOB MAIN_CODES src/*.cpp)
+file(GLOB MAIN_CODES src/*.cpp src/*.h)
 include_directories(src)
 
 # Tell CMake to create the helloworld executable
