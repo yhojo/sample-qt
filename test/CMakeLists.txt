@@ -2,13 +2,13 @@ cmake_minimum_required(VERSION 3.1)
 
 include(../cmake/qt5.cmake)
 
-file(GLOB FRAMEWORK_CODES ../fwk/*.cpp)
+file(GLOB FRAMEWORK_CODES ../fwk/*.cpp ../fwk/*.h)
 include_directories(../fwk)
 
-file(GLOB MAIN_CODES ../src/*.cpp)
+file(GLOB MAIN_CODES ../src/*.cpp ../src/*.h)
 include_directories(../src)
 
-file(GLOB TEST_SOURCE_FILES *.cpp)
+file(GLOB TEST_SOURCE_FILES *.cpp *.h)
 
 add_executable(run_test ${TEST_SOURCE_FILES} ${FRAMEWORK_CODES} ${MAIN_CODES})
 
