@@ -4,7 +4,6 @@ include(../cmake/qt5.cmake)
 
 ExternalProject_Get_Property(GoogleTest source_dir)
 include_directories(${source_dir}/googletest/include)
-MESSAGE("GTEST INCLUDE ${source_dir}/googletest/include")
 
 file(GLOB FRAMEWORK_CODES ../fwk/*.cpp)
 include_directories(../fwk)
